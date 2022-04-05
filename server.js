@@ -3,8 +3,8 @@ const express = require("express");
 const app = express();
 //Import helper functions
 const { quotes } = require("./data");
-const quoteRouter = require("./Routes/apiRoutes");
 const { getRandomElement } = require("./utils");
+const {quoteRouter} = require("./Routes/apiRoutes");
 //Set port for server
 const PORT = process.env.PORT || 4001;
 
