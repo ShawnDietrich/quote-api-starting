@@ -38,3 +38,14 @@ quoteRouter.get("/", (req, res, next) => {
   });
   res.send(response);
 });
+
+//Add quotes
+quoteRouter.post("/", (req, res, next) => {
+  const { quote, person } = req.query;
+  if(quote && person) {
+    quotes.push({quote, person});
+    res.send({quote: {quote, person}})
+  }else {
+      res.status(400).send();
+  }
+});
